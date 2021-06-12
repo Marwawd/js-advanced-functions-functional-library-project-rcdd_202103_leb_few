@@ -107,13 +107,13 @@ const fi = (function() {
     },
     functions: function(obj) {
          const fn = []
-   
+
          for (let key in obj) {
            if (typeof obj[key] === "function"){
              fn.push(key)
            }
          }
-   
+
          return fn.sort()
        },
 
