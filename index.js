@@ -79,12 +79,14 @@ const fi = (function() {
 
 
          },
-         sortBy: function(collection){
+         sortBy: function(collection,callback){
            let arr=[];
               let collection1=Object.values(collection);
-          collection1.sort(function(a, b) {
-        return callback(a) - callback(b)
-      })
+              for(let i=0 ; i<collection1.length ; i++) {
+             if(callback(collection1[i])<=callback(collection1[i+1])){
+                arr.push(collection1[i])}
+
+           } return arr
 
 
             },
