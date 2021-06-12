@@ -73,7 +73,7 @@ const fi = (function() {
         },
       compact: function(collection){
           let arr=[];
-          let falsyv== new Set([false, null, 0, "", undefined, NaN]);
+          let falsyv=new Set([false, null, 0, "", undefined, NaN]);
           let collection1=Object.values(collection);
           return collection1.filter(e=> !falsyv.has(e))
 
