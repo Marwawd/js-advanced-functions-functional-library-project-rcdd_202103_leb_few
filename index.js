@@ -81,13 +81,41 @@ const fi = (function() {
          },
          sortBy: function(collection, callback) {
 
-      return Object.values(collection).sort(function(a, b) {
-        return callback(a) - callback(b)
-      })
+           return Object.values(collection).sort(function(a, b) {
+             return callback(a) - callback(b)
+            })
     },
-    functions: function() {
+
+    keys: function(obj) {
+
+      const keys = []
+      for (let key in obj){
+        keys.push(key)
+      }
+      return keys
+    },
+
+    values: function(obj) {
+      const values = []
+      for (let key in obj){
+        values.push(obj[key])
+      }
+      return values
+
+
 
     },
+    functions: function(obj) {
+         const fn = []
+   
+         for (let key in obj) {
+           if (typeof obj[key] === "function"){
+             fn.push(key)
+           }
+         }
+   
+         return fn.sort()
+       },
 
 
   }
