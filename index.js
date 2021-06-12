@@ -83,7 +83,7 @@ const fi = (function() {
            let arr=[];
               let collection1=Object.values(collection);
               for(let i=0 ; i<collection1.length ; i++) {
-             if(collection1[i]=<collection1[i+1]){
+             if(collection1[i]<=collection1[i+1]){
                 arr.push(collection1[i])}
 
            } return arr
